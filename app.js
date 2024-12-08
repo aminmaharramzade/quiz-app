@@ -1,27 +1,27 @@
 function playGame(){
-const words = ["heyva", "nar", "armud"];    // arrayin sozleri
+const words = ["heyva", "nar", "armud"];   
 
-let word = words[Math.floor(Math.random() * words.length)];  //?  arraydan random 3unnen birini secmek ucun 
-let hiddenWord = Array(word.length).fill("_"); // random secilen sozu fill ile herf sayina gore muyeyyenlesdirib _ ile gizledirik
+let word = words[Math.floor(Math.random() * words.length)];   
+let hiddenWord = Array(word.length).fill("_"); // 
 console.log(word);
 
 alert("Welcome to the quiz game!")
 
 let lives = 5
-let guessedLetters = [] // yazilan herfleri ozunde save etsin
+let guessedLetters = [] 
 
 while (lives > 0 && hiddenWord.includes("_")){
 alert(`Your word is ${hiddenWord.join(" ")}`)
 alert(`Chances :  ${lives}`) 
 
 
-let guess = prompt("Guess the letter...").toLowerCase(); //boyukle yazsa bele balaca ile gorsensin
+let guess = prompt("Guess the letter...").toLowerCase(); 
 
 let wordIndex =  word.indexOf(guess) 
 
 if(guessedLetters.includes(guess)){
     alert("Try different ...")
-    continue; // eyni birsey yazanda hecne elememis tezden baslasin
+    continue; 
 }
 
 guessedLetters.push(guess)
